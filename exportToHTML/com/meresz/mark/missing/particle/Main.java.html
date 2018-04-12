@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(104,151,187); }
+.s3 { color: rgb(128,128,128); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Main.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">public static boolean </span><span class="s1">megcsinalhato(</span><span class="s0">boolean</span><span class="s1">[ ][ ] terkep</span><span class="s0">, int </span><span class="s1">startX</span><span class="s0">, int </span><span class="s1">startY</span><span class="s0">, int </span><span class="s1">energia</span><span class="s0">, int </span><span class="s1">celX</span><span class="s0">, int</span><span class="s1"> 
+            celY) { 
+        </span><span class="s0">int </span><span class="s1">result = BFS(terkep</span><span class="s0">, </span><span class="s1">startX</span><span class="s0">, </span><span class="s1">startY</span><span class="s0">, </span><span class="s1">celX</span><span class="s0">, </span><span class="s1">celY)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(result==-</span><span class="s2">1 </span><span class="s1">|| result&gt;energia) 
+            </span><span class="s0">return false;</span><span class="s1"> 
+        </span><span class="s0">else</span><span class="s1"> 
+            </span><span class="s0">return true;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public static int </span><span class="s1">BFS(</span><span class="s0">boolean </span><span class="s1">map[][]</span><span class="s0">,  int </span><span class="s1">srcX</span><span class="s0">, int </span><span class="s1">srcY</span><span class="s0">,int </span><span class="s1">destX</span><span class="s0">,int </span><span class="s1">destY) 
+    { 
+        </span><span class="s0">int </span><span class="s1">rowNum[] = {-</span><span class="s2">1</span><span class="s0">, </span><span class="s2">0</span><span class="s0">, </span><span class="s2">0</span><span class="s0">, </span><span class="s2">1</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">int </span><span class="s1">colNum[] = {</span><span class="s2">0</span><span class="s0">, </span><span class="s1">-</span><span class="s2">1</span><span class="s0">, </span><span class="s2">1</span><span class="s0">, </span><span class="s2">0</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">class </span><span class="s1">Cell 
+        { 
+            </span><span class="s0">int </span><span class="s1">x</span><span class="s0">,</span><span class="s1">y</span><span class="s0">,</span><span class="s1">dist</span><span class="s0">;</span><span class="s1"> 
+ 
+            </span><span class="s0">public </span><span class="s1">Cell(</span><span class="s0">int </span><span class="s1">x</span><span class="s0">, int </span><span class="s1">y</span><span class="s0">, int </span><span class="s1">dist) { 
+                </span><span class="s0">this</span><span class="s1">.x = x</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">this</span><span class="s1">.y = y</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">this</span><span class="s1">.dist = dist</span><span class="s0">;</span><span class="s1"> 
+            } 
+        }</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s0">boolean </span><span class="s1">visited[][]=</span><span class="s0">new boolean</span><span class="s1">[map.length][map[</span><span class="s2">0</span><span class="s1">].length]</span><span class="s0">;</span><span class="s1"> 
+        visited[srcX][srcY] = </span><span class="s0">true;</span><span class="s1"> 
+        Queue&lt;Cell&gt; queue=</span><span class="s0">new </span><span class="s1">LinkedList&lt;&gt;()</span><span class="s0">;</span><span class="s1"> 
+        Cell startCell =</span><span class="s0">new </span><span class="s1">Cell(srcX</span><span class="s0">,</span><span class="s1">srcY</span><span class="s0">,</span><span class="s2">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        queue.add(startCell)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">while </span><span class="s1">(queue.size()!=</span><span class="s2">0</span><span class="s1">) 
+        { 
+            Cell currentCell = queue.peek()</span><span class="s0">;</span><span class="s1"> 
+            </span><span class="s0">if </span><span class="s1">(currentCell.x == destX &amp;&amp; currentCell.y == destY) 
+                </span><span class="s0">return </span><span class="s1">currentCell.dist</span><span class="s0">;</span><span class="s1"> 
+            queue.poll()</span><span class="s0">;</span><span class="s1"> 
+            </span><span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s2">4</span><span class="s0">; </span><span class="s1">i++) 
+            { 
+                </span><span class="s0">int </span><span class="s1">row = currentCell.x + rowNum[i]</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">int </span><span class="s1">col = currentCell.y + colNum[i]</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">if </span><span class="s1">((row &gt;= </span><span class="s2">0</span><span class="s1">) &amp;&amp; (row &lt; map.length) &amp;&amp; 
+                        (col &gt;= </span><span class="s2">0</span><span class="s1">) &amp;&amp; (col &lt; map[</span><span class="s2">0</span><span class="s1">].length) &amp;&amp; map[row][col] &amp;&amp; 
+                        !visited[row][col]) 
+                { 
+                    visited[row][col] = </span><span class="s0">true;</span><span class="s1"> 
+                    Cell adjacentCell = </span><span class="s0">new </span><span class="s1">Cell(row</span><span class="s0">, </span><span class="s1">col</span><span class="s0">,</span><span class="s1">currentCell.dist + </span><span class="s2">1 </span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                    queue.add(adjacentCell)</span><span class="s0">;</span><span class="s1"> 
+                } 
+            } 
+        } 
+        </span><span class="s0">return </span><span class="s1">-</span><span class="s2">1</span><span class="s0">;</span><span class="s1"> 
+    }</span></pre>
+</body>
+</html>

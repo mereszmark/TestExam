@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<style>
+    body {
+        width: 90%;
+        margin: auto;
+    }
+
+    .task {
+        width: 80%;
+        margin: 20px 20px 10px;
+        text-align: justify;
+    }
+
+    .solution-1 strong {
+        font-size: 18px;
+        font-family: "Times New Roman", serif;
+
+    }
+
+    .solution-1, .solution-2, .solution-3,.solution-4 {
+        margin-bottom: 30px;
+    }
+
+    .solution-3 {
+        margin-left: 40px;
+        font-family: "Times New Roman", sans-serif;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .solution-2,.solution-4 {
+        background: #FFFFFF;
+        font-family: Courier New, Courier;
+        font-size: 10pt;
+        COLOR: #000000;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+    }
+
+</style>
+
+
+<article>
+    <h1>1. OLVASGATÁS A BUSZON.</h1>
+    <p class="task solution-1">
+        A java.util osztályairól és interfészeiről beszélünk. Ha fontos a sorrend, akkor List, ha egy halmazod van,
+        akkor <strong>Set</strong> ha objektumokhoz akarsz objektumokat rendelni, akkor <strong>Map</strong>, ha az
+        elsőként érkezettet elsőként
+        dolgozod fel, akkor <strong>Queue</strong>, ha az elsőként érkezettet utolsóként dolgozod fel, akkor <strong>Stack</strong>,
+        ha lehet lista vagy
+        halmaz is, akkor <strong>Collection</strong> és aki segít sorra venni ezek elemeit <strong>Iterator</strong>.
+    </p>
+</article>
+
+<article>
+    <h1>2. UNALMAS PROJEKT.</h1>
+    <p class="task"> Készíts egy függvényt, ami kap egy egész számokból álló listát, és visszaadja, hogy hány elem
+        esetében igaz az,
+        hogy az elem pontosan eggyel kisebb az utána álló elemnél.</p>
+    <div class="solution-2"><strong><font color='#7f0055'>&nbsp;&nbsp;&nbsp;&nbsp;public</font></strong>&nbsp;<strong><font color='#7f0055'>static</font></strong>&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;eggyelNagyobb(List&lt;Integer&gt;&nbsp;szamok)&nbsp;{
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;count&nbsp;=&nbsp;0;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>for</font></strong>&nbsp;(<strong><font color='#7f0055'>int</font></strong>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;<&nbsp;szamok.size()&nbsp;-&nbsp;1;&nbsp;i++)&nbsp;{
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>if</font></strong>&nbsp;(szamok.get(i)&nbsp;==&nbsp;szamok.get(i&nbsp;+&nbsp;1)&nbsp;-&nbsp;1)
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>return</font></strong>&nbsp;count;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+</article>
+
+<article>
+    <h1>3. KÖTETLEN BESZÉLGETÉS A KONYHÁBAN.</h1>
+    <p class="task">A Szingularitás után a világ egész jó hely lett, sokan még szeretik a kézműves programokat, ezért
+        egyelőre van
+        még munkád.
+        Éppen egy haverodnak meséled, hogy miért nem mentél el egy utazásra, amit láttál egy netes reklámban. Az utazás
+        csupán egy órás lett volna, a közeli égitesteket érintve, ami során rövid időre az űrhajó a fénysebességet is
+        megközelíti. Nem sokan jelentkeztek erre az utazásra, te miért hagytad ki?
+    </p>
+    <p class="solution-3">Azért hagytam ki mert rájöttem arra, hogy valószínűleg a végtelenségbe tartana az űrhajó és
+        sose térnénk vissza.</p>
+</article>
+
+<article>
+    <h1>4. ÉRDEKES PROJEKT.</h1>
+    <p class="task"> Egy kétdimenziós boolean tömbben kapsz egy térképet. Igaz esetén a mező fal, egyébként üres. Már
+        csak E energiád maradt, el tudsz-e jutni a startból célba? Csak vízszintesen vagy függőlegesen léphetsz, minden
+        lépés
+        egy energiába kerül. Fogy az oxigéned, ezért most nem szempont, hogy a kód csodálatos legyen, és amúgy is
+        brutálerős
+        gépen futtatod, de a hibás működés az életedbe kerülhet.</p>
+    <br>
+    <div class="solution-4" '>&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>public</font></strong>&nbsp;&nbsp;<strong><font color='#7f0055'>boolean</font></strong>&nbsp;megcsinalhato(<strong><font color='#7f0055'>boolean</font></strong>[&nbsp;][&nbsp;]&nbsp;terkep,&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;startX,&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;startY,&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;energia,&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;celX,&nbsp;<strong><font color='#7f0055'>int</font></strong>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;celY)&nbsp;{
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;result&nbsp;=&nbsp;BFS(terkep,&nbsp;startX,&nbsp;startY,&nbsp;celX,&nbsp;celY);
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>if</font></strong>(result==-1&nbsp;||&nbsp;result>energia)
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>return</font></strong>&nbsp;<strong><font color='#7f0055'>false</font></strong>;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>else</font></strong>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>return</font></strong>&nbsp;<strong><font color='#7f0055'>true</font></strong>;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br/>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2040a0'>/**
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Az&nbsp;ideális&nbsp;út&nbsp;megtalálásához&nbsp;szélésségi&nbsp;keresést&nbsp;futtatunk.&nbsp;Mely&nbsp;meghatározza&nbsp;A-ból&nbsp;B-be&nbsp;a&nbsp;legrövidebb&nbsp;utat.
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Később&nbsp;ellenőrizzük&nbsp;hogy&nbsp;a&nbsp;legrövidebb&nbsp;út&nbsp;bejárható-e&nbsp;E&nbsp;energiával.
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>public</font></strong>&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;BFS(<strong><font color='#7f0055'>boolean</font></strong>&nbsp;map[][],&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;srcX,&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;srcY,<strong><font color='#7f0055'>int</font></strong>&nbsp;destX,<strong><font color='#7f0055'>int</font></strong>&nbsp;destY)
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;{
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;rowNum[]&nbsp;=&nbsp;{-1,&nbsp;0,&nbsp;0,&nbsp;1};
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;colNum[]&nbsp;=&nbsp;{0,&nbsp;-1,&nbsp;1,&nbsp;0};
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>class</font></strong>&nbsp;Cell
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;x,y,dist;
+        <br/>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>public</font></strong>&nbsp;Cell(<strong><font color='#7f0055'>int</font></strong>&nbsp;x,&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;y,&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;dist)&nbsp;{
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>this</font></strong>.x&nbsp;=&nbsp;x;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>this</font></strong>.y&nbsp;=&nbsp;y;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>this</font></strong>.dist&nbsp;=&nbsp;dist;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+        <br/>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>boolean</font></strong>&nbsp;visited[][]=<strong><font color='#7f0055'>new</font></strong>&nbsp;<strong><font color='#7f0055'>boolean</font></strong>[map.length][map[0].length];
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visited[srcX][srcY]&nbsp;=&nbsp;<strong><font color='#7f0055'>true</font></strong>;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queue&lt;Cell&gt;&nbsp;queue=<strong><font color='#7f0055'>new</font></strong>&nbsp;LinkedList<>();
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cell&nbsp;startCell&nbsp;=<strong><font color='#7f0055'>new</font></strong>&nbsp;Cell(srcX,srcY,0);
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue.add(startCell);
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>while</font></strong>&nbsp;(queue.size()!=0)
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cell&nbsp;currentCell&nbsp;=&nbsp;queue.peek();
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>if</font></strong>&nbsp;(currentCell.x&nbsp;==&nbsp;destX&nbsp;&&&nbsp;currentCell.y&nbsp;==&nbsp;destY)
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>return</font></strong>&nbsp;currentCell.dist;
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue.poll();
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>for</font></strong>&nbsp;(<strong><font color='#7f0055'>int</font></strong>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;<&nbsp;4;&nbsp;i++)
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;row&nbsp;=&nbsp;currentCell.x&nbsp;+&nbsp;rowNum[i];
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>int</font></strong>&nbsp;col&nbsp;=&nbsp;currentCell.y&nbsp;+&nbsp;colNum[i];
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>if</font></strong>&nbsp;((row&nbsp;>=&nbsp;0)&nbsp;&&&nbsp;(row&nbsp;<&nbsp;map.length)&nbsp;&&
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(col&nbsp;>=&nbsp;0)&nbsp;&&&nbsp;(col&nbsp;<&nbsp;map[0].length)&nbsp;&&&nbsp;map[row][col]&nbsp;&&
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!visited[row][col])
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visited[row][col]&nbsp;=&nbsp;<strong><font color='#7f0055'>true</font></strong>;
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cell&nbsp;adjacentCell&nbsp;=&nbsp;<strong><font color='#7f0055'>new</font></strong>&nbsp;Cell(row,&nbsp;col,currentCell.dist&nbsp;+&nbsp;1&nbsp;);
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue.add(adjacentCell);
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>return</font></strong>&nbsp;-1;
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+</article>
+</body>
+</html>
